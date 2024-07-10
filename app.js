@@ -113,43 +113,43 @@ function login() {
 
 
 
-// var todoList = [];
+var todoList = [];
 
-// function addTask() {
-//   var taskInput = document.getElementById("taskInput");
-//   var newTask = taskInput.value.trim();
+function addTask() {
+  var taskInput = document.getElementById("taskInput");
+  var newTask = taskInput.value.trim();
 
-//   if (newTask) {
-//     todoList.push({
-//       description: newTask,
-//       completed: false,
-//     });
-//     taskInput.value = "";
-//     renderList();
-//   }
-// }
+  if (newTask) {
+    todoList.push({
+      description: newTask,
+      completed: false,
+    });
+    taskInput.value = "";
+    renderList();
+  }
+}
 
-// function renderList() {
-//   var listContainer = document.getElementById("todoList");
-//   listContainer.innerHTML = "";
+function renderList() {
+  var listContainer = document.getElementById("todoList");
+  listContainer.innerHTML = "";
 
-//   todoList.forEach((task, index) => {
-//     var listItem = document.createElement("li");
-//     listItem.innerHTML = `
-//       <input type="checkbox" id="task-${index}" ${
-//         task.completed ? "checked" : ""
-//       } onclick="toggleTaskCompletion(${index})">
-//       <label for="task-${index}">${task.description}</label>
-//     `;
-//     listContainer.appendChild(listItem);
-//   });
-// }
+  todoList.forEach((task, index) => {
+    var listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <input type="checkbox" id="task-${index}" ${
+        task.completed ? "checked" : ""
+      } onclick="toggleTaskCompletion(${index})">
+      <label for="task-${index}">${task.description}</label>
+    `;
+    listContainer.appendChild(listItem);
+  });
+}
 
-// function toggleTaskCompletion(index) {
-//   todoList[index].completed = !todoList[index].completed;
-//   renderList();
-// }
+function toggleTaskCompletion(index) {
+  todoList[index].completed = !todoList[index].completed;
+  renderList();
+}
 
-// document.getElementById("addButton").addEventListener("click", addTask);
+document.getElementById("addButton").addEventListener("click", addTask);
 
-// renderList();
+renderList();
