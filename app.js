@@ -113,43 +113,155 @@ function login() {
 
 
 
-var todoList = [];
+// var todoList = [];
 
-function addTask() {
-  var taskInput = document.getElementById("taskInput");
-  var newTask = taskInput.value.trim();
+// function addTask() {
+//   var taskInput = document.getElementById("taskInput");
+//   var newTask = taskInput.value.trim();
 
-  if (newTask) {
-    todoList.push({
-      description: newTask,
-      completed: false,
-    });
-    taskInput.value = "";
-    renderList();
+//   if (newTask) {
+//     todoList.push({
+//       description: newTask,
+//       completed: false,
+//     });
+//     taskInput.value = "";
+//     renderList();
+//   }
+// }
+
+// function renderList() {
+//   var listContainer = document.getElementById("todoList");
+//   listContainer.innerHTML = "";
+
+//   todoList.forEach((task, index) => {
+//     var listItem = document.createElement("li");
+//     listItem.innerHTML = `
+//       <input type="checkbox" id="task-${index}" ${
+//         task.completed ? "checked" : ""
+//       } onclick="toggleTaskCompletion(${index})">
+//       <label for="task-${index}">${task.description}</label>
+//     `;
+//     listContainer.appendChild(listItem);
+//   });
+// }
+
+// function toggleTaskCompletion(index) {
+//   todoList[index].completed = !todoList[index].completed;
+//   renderList();
+// }
+
+// document.getElementById("addButton").addEventListener("click", addTask);
+
+// renderList();
+
+
+
+let todoList = document.getElementById("todo-list")
+let userImp = document.getElementById("user-imp")
+
+function addTodo(event){
+  if(userImp.value == ""){
+    
+  }else{
+    todoList.innerHTML += `<li class="col-12 py-4 d-flex"  draggable="true"> 
+    <input type="text" class="col-8  py-2" value="${userImp.value}" disabled>
+    <button   type="button" class="btn btn-secondary col-2" onclick='deleteTodo(event)'><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+    <button   type="button" class="btn btn-secondary col-2" onclick='editTodo(event)'><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+    </li>`
+    userImp.value = ""
+
   }
 }
 
-function renderList() {
-  var listContainer = document.getElementById("todoList");
-  listContainer.innerHTML = "";
+// function enter(event) {
+//   if(event.)
+// }
 
-  todoList.forEach((task, index) => {
-    var listItem = document.createElement("li");
-    listItem.innerHTML = `
-      <input type="checkbox" id="task-${index}" ${
-        task.completed ? "checked" : ""
-      } onclick="toggleTaskCompletion(${index})">
-      <label for="task-${index}">${task.description}</label>
-    `;
-    listContainer.appendChild(listItem);
-  });
+function deleteTodo(event){
+  event.target.parentNode.remove()
 }
 
-function toggleTaskCompletion(index) {
-  todoList[index].completed = !todoList[index].completed;
-  renderList();
+
+
+function editTodo(event){
+  if( event.target.parentNode.childNodes[1].disabled == true){
+  event.target.parentNode.childNodes[1].disabled = false
+  console.log(true)
+  }else{
+    event.target.parentNode.childNodes[1].disabled = true
+  }
 }
 
-document.getElementById("addButton").addEventListener("click", addTask);
 
-renderList();
+
+
+let todoList1 = document.getElementById("todo-list1")
+let userImp1 = document.getElementById("user-imp1")
+
+function addTodo1(event){
+  if(userImp1.value == ""){
+    
+  }else{
+    todoList1.innerHTML += `<li class="col-12 py-4 d-flex"  draggable="true"> 
+    <input type="text" class="col-8  py-2" value="${userImp1.value}" disabled>
+    <button   type="button" class="btn btn-secondary col-2" onclick='deleteTodo(event)'><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+    <button   type="button" class="btn btn-secondary col-2" onclick='editTodo(event)'><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+    </li>`
+    userImp1.value = ""
+
+  }
+}
+
+// function enter(event) {
+//   if(event.)
+// }
+
+function deleteTodo1(event){
+  event.target.parentNode.remove()
+}
+
+
+function editTodo1(event){
+  if( event.target.parentNode.childNodes[1].disabled == true){
+  event.target.parentNode.childNodes[1].disabled = false
+  console.log(true)
+  }else{
+    event.target.parentNode.childNodes[1].disabled = true
+  }
+}
+
+
+let todoList2 = document.getElementById("todo-list2")
+let userImp2 = document.getElementById("user-imp2")
+
+function addTodo2(event){
+  if(userImp2.value == ""){
+    
+  }else{
+    todoList2.innerHTML += `<li class="col-12 py-4 d-flex"  draggable="true"> 
+    <input type="text" class="col-8  py-2" value="${userImp2.value}" disabled>
+    <button   type="button" class="btn btn-secondary col-2" onclick='deleteTodo(event)'><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+    <button   type="button" class="btn btn-secondary col-2" onclick='editTodo(event)'><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+    </li>`
+    userImp2.value = ""
+
+  }
+}
+
+// function enter(event) {
+//   if(event.)
+// }
+
+function deleteTodo2(event){
+  event.target.parentNode.remove()
+}
+
+
+function editTodo2(event){
+  if( event.target.parentNode.childNodes[1].disabled == true){
+  event.target.parentNode.childNodes[1].disabled = false
+  console.log(true)
+  }else{
+    event.target.parentNode.childNodes[1].disabled = true
+  }
+}

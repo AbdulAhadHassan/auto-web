@@ -11,10 +11,30 @@ a{
 
 
 
-.todo-list-main{
+/* .todo-list-main{
 
+} */
+
+/* .todo-list-up{
+    background-color: antiquewhite;
+} */
+
+
+
+
+
+
+
+
+
+
+
+#todo-list{
+    list-style: none;
 }
 
-.todo-list-up{
-    background-color: antiquewhite;
+li input:disabled{
+    border: none;
+    background-color:transparent;
+
 }
